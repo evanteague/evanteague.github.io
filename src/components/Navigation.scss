@@ -1,0 +1,113 @@
+@import "../styles/variables.scss";
+
+.navigation {
+    position: relative;
+    z-index: 1;
+    background-color: black;
+    color: white;
+    width: 100%;
+
+    &.navigation--sticky {
+        position: sticky;
+        top: 0;
+    }
+
+    .navigation__title {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .navigation__container {
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navigation__list {
+        display: flex;
+        flex-direction: column;
+        height: 0;
+        transition: height 0.5s ease-out;
+        overflow-y: scroll;
+        padding: 0 15px;
+        position: absolute;
+        top: 100%;
+        background-color: black;
+        left: 0;
+        right: 0;
+        margin: 0;
+    }
+
+    .navigation__list.navigation__list--open {
+        display: flex;
+        height: 150px;
+    }
+
+    .navigation__menu-btn {
+        background-color: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .navigation__link {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+
+    .navigation__btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding-left: 0;
+    }
+
+    .navigation__item {
+        padding: 15px 0;
+    }
+
+    .navigation__item:not(:last-child) {
+        border-bottom: 1px solid grey;
+    }
+}
+
+@media screen and (min-width: $screen-large) {
+    .navigation {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .navigation__container {
+            width: $desktop-max-width;
+        }
+
+        &.navigation--sticky {
+            background-color: black;
+        }
+
+        .navigation__menu-btn { 
+            display: none;
+        }
+
+        .navigation__list { 
+            position: relative;
+            height: auto;
+            flex-direction: row;
+            padding: 0;
+            background-color: transparent;
+        }
+
+        .navigation__item:not(:last-child) {
+            border-bottom: none;
+        }
+
+        .navigation__item:not(:last-child) {
+            margin-right: 60px;
+        }
+    }
+}
