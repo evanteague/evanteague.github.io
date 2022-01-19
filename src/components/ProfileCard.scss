@@ -1,0 +1,47 @@
+@import "../styles/variables.scss";
+
+.profile-card {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.profile__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+
+    span {
+        margin-right: 20px;
+    }
+}
+
+.profile__description {
+    margin: 20px 0;
+}
+
+.profile__intro,
+.profile__name,
+.profile__job {
+    margin: 20px 0;
+}
+
+.profile-card__image {
+    width: 100%;
+    margin-right: 40px;
+}
+
+@media screen and (min-width: $screen-large) {
+    .profile-card {
+        flex-direction: row;
+        justify-content: space-between;
+        border-radius: 10px;
+    }
+
+    .profile-card__image {
+        width: clamp(400px, 500px, 700px);
+    }
+}
