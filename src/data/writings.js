@@ -1,4 +1,4 @@
-const SAMPLES = [
+const WRITINGS = [
     {
         title: 'Replacing the Water Cooler',
         link: 'https://evanteague.medium.com/replacing-the-water-cooler-a8bc563fad6e',
@@ -11,4 +11,4 @@ const SAMPLES = [
     },
 ];
 
-export default SAMPLES;
+export default WRITINGS;

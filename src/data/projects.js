@@ -1,4 +1,4 @@
-const MUSINGS = [
+const PROJECTS = [
     {
         title: 'Personal Website',
         link: 'https://github.com/evanteague/evanteague.github.io',
@@ -17,6 +17,12 @@ const MUSINGS = [
         imgPath: "/github.png",
         liveUrl: "https://frontend-practice-countdown-timer.vercel.app/"
     },
+    {
+        title: 'Data Storage',
+        link: 'https://github.com/evanteague/frontend-practice/tree/main/data-storage',
+        imgPath: "/github.png",
+        liveUrl: "https://frontend-practice-data-storage.vercel.app/"
+    },
 ];
 
-export default MUSINGS;
+export default PROJECTS;
