@@ -1,4 +1,5 @@
 import React from 'react';
+import { Email, Home } from '@carbon/icons-react';
 import Image from './Image';
 import SocialLinks from './SocialLinks';
 
@@ -15,21 +16,11 @@ function ProfileCard() {
                 <h3 className="profile__name text--large text--uppercase">Evan Teague</h3>
                 <h4 className="profile__job text--medium text--uppercase">Senior Software Developer</h4>
                 <div className="profile__info">
-                    <span className="material-icons">
-                        phone
-                    </span>
-                    <span>317-358-5405</span>
+                    <Email size="32" fill="black" />
+                    <a href="mailto:eteague13@gmail.com">eteague13@gmail.com</a>
                 </div>
                 <div className="profile__info">
-                    <span className="material-icons">
-                        email
-                    </span>
-                    eteague13@gmail.com
-                </div>
-                <div className="profile__info">
-                    <span className="material-icons">
-                        home
-                    </span>
+                    <Home size="32" fill="black" />
                     Maryland
                 </div>
                 <SocialLinks />
