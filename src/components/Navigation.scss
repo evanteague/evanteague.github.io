@@ -86,6 +86,10 @@
             width: $desktop-max-width;
         }
 
+        .navigation__link, .navigation__title {
+            color: black;
+        }
+
         &.navigation--sticky {
             background-color: black;
         }

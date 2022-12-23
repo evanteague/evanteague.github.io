@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from "gatsby"
+import { CaretDown, Close, Menu } from '@carbon/icons-react';
 import classNames from 'classnames';
 import navlinks from '../data/navlinks';
 
@@ -12,36 +13,28 @@ function getLink(linkData) {
             return (
                 <a className="navigation__link" href={path} target="_blank" rel="noopener noreferrer">
                     {name}
-                    {children && <span className="material-icons">
-                        arrow_drop_down
-                    </span>}
+                    {children && <CaretDown size="16" fill="#fff" />}
                 </a>
             );
         case 'section':
             return (
                 <a className="navigation__link" href={`#${path}`}>
                     {name}
-                    {children && <span className="material-icons">
-                        arrow_drop_down
-                    </span>}
+                    {children && <CaretDown size="" fill="#fff" />}
                 </a>
             );
         case 'none':
             return (
                 <a className="navigation__link">
                     {name}
-                    {children && <span className="material-icons">
-                        arrow_drop_down
-                    </span>}
+                    {children && <CaretDown size="16" fill="#fff" />}
                 </a>
             );
         default:
             return (
                 <Link className="navigation__link" to={path}>
                     {name}
-                    {children && <span className="material-icons">
-                        arrow_drop_down
-                    </span>}
+                    {children && <CaretDown size="16" fill="#fff" />}
                 </Link>
             );
     }
@@ -92,9 +85,7 @@ function Navigation() {
                     })}
                 </ul>
                 <button className="navigation__menu-btn" onClick={handleOpenMainMenu}>
-                    <span className="material-icons">
-                        {openMainMenu ? "close" : "menu"}
-                    </span>
+                    {openMainMenu ? <Close size="24" fill="#fff" /> : <Menu size="24" fill="#fff" />}
                 </button>
             </div>
         </nav>

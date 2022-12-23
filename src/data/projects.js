@@ -23,6 +23,12 @@ const PROJECTS = [
         imgPath: "/github.png",
         liveUrl: "https://frontend-practice-data-storage.vercel.app/"
     },
+    {
+        title: 'MTG Tokens',
+        link: 'https://github.com/evanteague/mtgtokens',
+        imgPath: "/github.png",
+        liveUrl: "https://www.mtgtokens.app/"
+    },
 ];
 
 export default PROJECTS;

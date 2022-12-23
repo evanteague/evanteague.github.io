@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowRight } from '@carbon/icons-react';
 import Image from './Image';
 import './InfoCard.scss';
 
@@ -14,9 +15,7 @@ function InfoCard(props) {
                 {liveUrl && (
                     <a href={liveUrl} target="_blank" rel="noopener noreferrer">
                         Test it out
-                        <span className="material-icons">
-                            navigate_next
-                        </span>
+                        <ArrowRight size="24" fill="#fff" />
                     </a>
                 )}
             </div>
