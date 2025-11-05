@@ -1,13 +1,15 @@
-import React from "react";
-import Header from "../sections/Header";
+import { SidebarProvider } from '@/components/ui/sidebar';
+import { AppSidebar } from './AppSidebar';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-export default function Layout({ children }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
+  const queryClient = new QueryClient();
   return (
-    <main className="main">
-        <Header />
-        <div className="content-container">
-            {children}
-        </div>
-    </main>
-  )
+    <QueryClientProvider client={queryClient}>
+      <SidebarProvider>
+        <AppSidebar />
+        <main className="w-full">{children}</main>
+      </SidebarProvider>
+    </QueryClientProvider>
+  );
 }
