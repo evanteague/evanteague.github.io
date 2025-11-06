@@ -1,6 +1,6 @@
 import { jsxs, jsx } from "react/jsx-runtime";
 import { LinkedInLogoIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
-import { R as Route } from "./router-BxkAHa_W.js";
+import { R as Route } from "./router-DZ0bll9i.js";
 import "@tanstack/react-router";
 import "@tanstack/react-router-devtools";
 import "@tanstack/react-devtools";

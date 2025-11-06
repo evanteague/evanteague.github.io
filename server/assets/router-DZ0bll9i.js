@@ -1,4 +1,4 @@
-import { useRouter, isRedirect, createRootRoute, HeadContent, Scripts, createFileRoute, lazyRouteComponent, createRouter } from "@tanstack/react-router";
+import { useRouter, isRedirect, createRootRoute, HeadContent, Scripts, createFileRoute, lazyRouteComponent, createRouter, createMemoryHistory } from "@tanstack/react-router";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
@@ -715,7 +715,7 @@ function RootDocument({ children }) {
     ] })
   ] });
 }
-const $$splitComponentImporter = () => import("./index-B_Q1djC_.js");
+const $$splitComponentImporter = () => import("./index-DKuQcsOM.js");
 const Route = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter, "component"),
   loader: async () => {
@@ -736,11 +736,15 @@ const rootRouteChildren = {
   IndexRoute
 };
 const routeTree = Route$1._addFileChildren(rootRouteChildren)._addFileTypes();
+const memoryHistory = createMemoryHistory({
+  initialEntries: ["/"]
+});
 const getRouter = () => {
   return createRouter({
     routeTree,
     scrollRestoration: true,
-    defaultPreloadStaleTime: 0
+    defaultPreloadStaleTime: 0,
+    history: memoryHistory
   });
 };
 const router = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
