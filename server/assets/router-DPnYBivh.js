@@ -34,7 +34,7 @@ function useServerFn(serverFn) {
     [router2, serverFn]
   );
 }
-const appCss = "/assets/styles-DpMJVjVz.css";
+const appCss = "/client/assets/styles-DpMJVjVz.css";
 const MOBILE_BREAKPOINT = 768;
 function useIsMobile() {
   const [isMobile, setIsMobile] = React.useState(void 0);
@@ -715,7 +715,7 @@ function RootDocument({ children }) {
     ] })
   ] });
 }
-const $$splitComponentImporter = () => import("./index-DKuQcsOM.js");
+const $$splitComponentImporter = () => import("./index-GMmlEFe8.js");
 const Route = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter, "component"),
   loader: async () => {

@@ -302,7 +302,7 @@ const VIRTUAL_MODULES = {
 async function loadVirtualModule(id) {
   switch (id) {
     case VIRTUAL_MODULES.startManifest:
-      return await import("./assets/_tanstack-start-manifest_v-BFn9GhKZ.js");
+      return await import("./assets/_tanstack-start-manifest_v-aeUnWGEd.js");
     case VIRTUAL_MODULES.injectedHeadScripts:
       return await import("./assets/_tanstack-start-injected-head-scripts_v-cda0Ky0D.js");
     default:
@@ -381,7 +381,7 @@ const handleServerAction = async ({
   const abort = () => controller.abort();
   request.signal.addEventListener("abort", abort);
   if (regex === void 0) {
-    regex = new RegExp(`${"/_serverFn/"}([^/?#]+)`);
+    regex = new RegExp(`${"/client/_serverFn/"}([^/?#]+)`);
   }
   const method = request.method;
   const url = new URL(request.url, "http://localhost:3000");
@@ -586,7 +586,7 @@ const HEADERS = {
   TSS_SHELL: "X-TSS_SHELL"
 };
 const createServerRpc = (functionId, splitImportFn) => {
-  const url = "/_serverFn/" + functionId;
+  const url = "/client/_serverFn/" + functionId;
   return Object.assign(splitImportFn, {
     url,
     functionId,
@@ -622,13 +622,13 @@ function getStartResponseHeaders(opts) {
   return headers;
 }
 function createStartHandler(cb) {
-  const ROUTER_BASEPATH = "/";
+  const ROUTER_BASEPATH = "client";
   let startRoutesManifest = null;
   let startEntry = null;
   let routerEntry = null;
   const getEntries = async () => {
     if (routerEntry === null) {
-      routerEntry = await import("./assets/router-DZ0bll9i.js").then((n) => n.r);
+      routerEntry = await import("./assets/router-DPnYBivh.js").then((n) => n.r);
     }
     if (startEntry === null) {
       startEntry = await import("./assets/start-HYkvq4Ni.js");
@@ -699,7 +699,7 @@ function createStartHandler(cb) {
           },
           async () => {
             try {
-              if (href.startsWith("/_serverFn/")) {
+              if (href.startsWith("/client/_serverFn/")) {
                 return await handleServerAction({
                   request,
                   context: requestOpts?.context
