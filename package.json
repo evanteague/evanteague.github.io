@@ -10,7 +10,7 @@
     "lint": "eslint",
     "format": "prettier",
     "check": "prettier --write . && eslint --fix",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist/client --cname evanteague.dev"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",

@@ -2,14 +2,18 @@ import { Footer } from '@/components/Footer';
 import { Quote } from '@/components/Quote';
 import Project from '@/components/templates/Project';
 import Work from '@/components/templates/Work';
+import { PROJECTS, WORKS } from '@/data/data';
 import { getProjects, getWorks } from '@/data/requests';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
   component: App,
   loader: async () => {
-    const works = await getWorks();
-    const projects = await getProjects();
+    // Uncomment to use server functions
+    // const works = await getWorks();
+    // const projects = await getProjects();
+    const works = WORKS;
+    const projects = PROJECTS;
     return { works, projects };
   },
 });
