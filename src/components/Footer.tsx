@@ -6,6 +6,7 @@ export function Footer() {
       <a
         href="mailto:eteague13@gmail.com"
         className="text-white flex items-center"
+        id="contact"
       >
         Get in touch
       </a>

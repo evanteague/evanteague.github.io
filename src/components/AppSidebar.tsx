@@ -15,19 +15,24 @@ import {
   getWorks as getServerWorks,
   getProjects as getServerProjects,
 } from '@/data/requests';
+import { WORKS, PROJECTS } from '@/data/data';
 
 export function AppSidebar() {
-  const getWorks = useServerFn(getServerWorks);
-  const getProjects = useServerFn(getServerProjects);
+  // Uncomment to use server functions
+  // const getWorks = useServerFn(getServerWorks);
+  // const getProjects = useServerFn(getServerProjects);
 
-  const { data: works } = useQuery({
-    queryKey: ['works'],
-    queryFn: () => getWorks(),
-  });
-  const { data: projects } = useQuery({
-    queryKey: ['projects'],
-    queryFn: () => getProjects(),
-  });
+  // const { data: works } = useQuery({
+  //   queryKey: ['works'],
+  //   queryFn: () => getWorks(),
+  // });
+  // const { data: projects } = useQuery({
+  //   queryKey: ['projects'],
+  //   queryFn: () => getProjects(),
+  // });
+
+  const works = WORKS;
+  const projects = PROJECTS;
   return (
     <Sidebar>
       <SidebarContent>
@@ -62,6 +67,11 @@ export function AppSidebar() {
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>
+            <a href="#contact">Contact</a>
+          </SidebarGroupLabel>
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
